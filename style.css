@@ -1,0 +1,592 @@
+@font-face {
+    font-family: 'Museo Sans Cyrl100';
+    src: url(/fonts/MuseoSansCyrl-100.ttf);
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Museo Sans Cyrl700';
+    src: url(/fonts/MuseoSansCyrl_2.otf);
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Museo Sans Cyrl300';
+    src: url(/fonts/museo_sans_cyrl_300.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Museo Sans Cyrl500';
+    src: url(/fonts/museo_sans_cyrl_500.ttf);
+    font-style: normal;
+}
+
+a{
+    text-decoration: none;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0px 20px;
+}
+
+.header-slider{
+    position: relative;
+}
+
+.header-slider-top{
+    padding: 50px 50px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+}
+
+.header-logo{
+    width: 38px;
+}
+.header-menu{
+    background-image: url(/images/menu.svg);
+    background-repeat: no-repeat;
+    height: 31px;
+    width: 26px;
+    cursor: pointer;
+}
+
+.back-to-pf{
+    z-index: 99;
+    text-transform: uppercase;
+    letter-spacing: 1.35px;
+    font-family: 'Museo Sans Cyrl300';
+    color: #262626;
+    position: absolute;
+    transform: rotate(-90deg);
+    bottom: 14%;
+    left: -25px;
+}
+
+
+.visit-site{
+    z-index: 99;
+    text-transform: uppercase;
+    letter-spacing: 1.35px;
+    font-family: 'Museo Sans Cyrl300';
+    color: #262626;
+    position: absolute;
+    transform: rotate(90deg);
+    right: 0;
+    bottom: 11%;
+}
+
+.hide-show{
+    display: none;
+}
+
+[class^="swiper-button-"] {
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+  }
+  
+  .swiper-slide {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  .swiper-container {
+    width: 100%;
+    height: 1024px;
+    float: left;
+    -webkit-transition: opacity .6s ease, -webkit-transform .3s ease;
+    transition: opacity .6s ease, -webkit-transform .3s ease;
+    transition: opacity .6s ease, transform .3s ease;
+    transition: opacity .6s ease, transform .3s ease, -webkit-transform .3s ease;
+    position: relative;
+  }
+  .swiper-container.nav-slider {
+    width: 20%;
+    padding-left: 5px;
+  }
+  .swiper-container.nav-slider .swiper-slide {
+    cursor: pointer;
+    opacity: .4;
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+  }
+  .swiper-container.nav-slider .swiper-slide.swiper-slide-active {
+    opacity: 1;
+  }
+  .swiper-container.nav-slider .swiper-slide .content {
+    width: 100%;
+  }
+  .swiper-container.nav-slider .swiper-slide .content .title {
+    font-size: 20px;
+  }
+  .swiper-container:hover .swiper-button-prev,
+  .swiper-container:hover .swiper-button-next {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .swiper-container.loading {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .swiper-slide {
+    overflow: hidden;
+  }
+  .swiper-slide .slide-bgimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  .swiper-slide .entity-img {
+    display: none;
+  }
+  .swiper-slide .content {
+    position: absolute;
+    bottom: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide .content .title {
+    font-size: 30px;
+    opacity: 0.9;
+    color: #262626;
+    font-family: 'Museo Sans Cyrl100';
+  }
+  .swiper-slide .content .caption {
+    font-family: 'Museo Sans Cyrl700';
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #5e774d;
+    display: block;
+    font-size: 100px;
+    font-weight: 700;
+    line-height: normal;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+    opacity: 0;
+    -webkit-transition: opacity .3s ease, -webkit-transform .7s ease;
+    transition: opacity .3s ease, -webkit-transform .7s ease;
+    transition: opacity .3s ease, transform .7s ease;
+    transition: opacity .3s ease, transform .7s ease, -webkit-transform .7s ease;
+  }
+  .swiper-slide .content .caption.show {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  
+  
+  [class^="swiper-button-"]{
+    background-image: none !important;
+    font-size: 24px;
+    padding-top: 50px;
+    position: absolute;
+    font-family: 'Museo Sans Cyrl300' !important;
+  }
+  
+.swiper-button-prev{
+    transform: rotate(-90deg) !important;
+    left: -39px;
+    top: 52%;
+}
+  
+.swiper-button-next{
+    transform: rotate(90deg) !important;
+    right: -39px;
+    top: 50%;
+    margin-top: -50px;
+}
+  
+.swiper-button-text{
+    border-top: 5px solid #d9255e;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1.35px;
+    color: #262626;
+}
+
+.about-project{
+    padding: 120px 0px;
+}
+
+.about-project-title{
+    color: #12171e;
+    font-family: 'Museo Sans Cyrl700';
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 55px;
+}
+
+.clearfix{
+    clear: both;
+}
+
+.about-project-content{
+    display: flex;
+    font-family: 'Museo Sans Cyrl300';
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-owner{
+    padding: 40px 112px;
+    border: 1px solid;
+    border-image: linear-gradient(45deg, rgba(0,0,0,0) 10%,rgb(0,0,0) 1%,rgb(0,0,0) 90%,rgba(0,0,0,0) 90%) 1;
+    line-height: 29px;
+    letter-spacing: 0.56px;
+    font-size: 20px;
+    color: #12171e;
+    white-space: nowrap;
+    margin-right: 20px;
+}
+
+.project-description{
+    max-width: 525px;
+    font-size: 16px;
+    line-height: 29px;
+    letter-spacing: 0.3px;
+    color: #000;
+}
+
+.about-logo{
+    padding: 100px 0px;
+    background-color: #443530;
+}
+
+.container_flex{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.about-logo-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-logo-title{
+    color: #fff;
+    font-family: 'Museo Sans Cyrl700';
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 55px;
+}
+
+.about-logo-description{
+    max-width: 450px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 26px;
+    letter-spacing: 0.3px;
+    font-family: 'Museo Sans Cyrl300';
+}
+
+.gif{
+    width: 100%;
+}
+
+.homepage{
+    padding: 80px 0px 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.homepage-title{
+    font-size: 50px;
+    font-family: 'Museo Sans Cyrl700';
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.homepage-description{
+    font-family: 'Museo Sans Cyrl300';
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.3px;
+    max-width: 540px;
+    align-self: center;
+}
+
+.container_flex-dir{
+    display: flex;
+    flex-direction: column;
+}
+
+.iMac-img{
+    width: 100%;
+}
+
+.iPad{
+    padding: 90px 0px 100px;
+}
+
+.iPad-img{
+    width: 100%;
+}
+
+.iPad-project{
+    position: relative;
+}
+
+.iPad-project-img{
+    width: 100%;
+}
+
+.iPad-project-sheets{
+    height: 73%;
+    position: absolute;
+    left: 0px;
+    top: 60%;
+}
+
+.design-description{
+    background-color: #fff;
+    padding: 80px 0px;
+}
+
+.description-text{
+    font-family: 'Museo Sans Cyrl300';
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.3px;
+    color: #000;
+    max-width: 730px;
+    margin-bottom: 90px;
+    align-self: center;
+}
+
+.design-description-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+.container_flex_center{
+    display: flex;
+    justify-content: center;
+}
+.design-description-img{
+    width: 100%;
+    align-self: center;
+}
+
+.callback{
+    z-index: 99;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1.35px;
+    font-family: 'Museo Sans Cyrl500';
+    color: #000;
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    margin-left: -50px;
+}
+
+.callback-red{
+    color: fuchsia;
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        padding: 0px 0px;
+        max-width: 768px;
+    }
+
+    .header-slider-top{
+        padding: 30px 20px 0px;
+    }
+
+    .swiper-slide .content {
+        top: -370px;
+        align-items: unset;
+        left: 95px;
+    }
+
+    .swiper-slide .content .title{
+        font-size: 16px;
+        letter-spacing: 0.45px;
+        margin-bottom: 10px;
+    }
+
+    .swiper-slide .content .caption{
+        font-size: 24px;
+        letter-spacing: 0.7px;
+    }
+
+    [class^="swiper-button-"]{
+        font-size: 14px;
+        padding-top: 17px;
+
+    }
+
+    .swiper-button-text{
+        border-top: 3px solid #d9255e;
+    }
+
+    .swiper-button-next{
+        top: 23%;
+        right: -8px;
+    }
+
+    .swiper-button-prev{
+        top: 20.6%;
+        left: -8px;
+    }
+
+    .swiper-button-text.show-hide{
+        display: none;
+    }
+    .swiper-button-text.hide-show{
+        display: block;
+    }
+
+    .back-to-pf{
+        bottom: 57%;
+        font-size: 14px;
+        left: -52px;
+        letter-spacing: 1px;
+    }
+
+    .swiper-slide .slide-bgimg{
+        background-position: left;
+    }
+    .swiper-container{
+        height: 692px;
+    }
+
+    .about-project{
+        padding: 45px 20px;
+    }
+
+    .about-project-title{
+        font-size: 26px;
+        margin-bottom: 20px;
+        align-self: flex-start;
+    }
+    
+    .about-project-content{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-owner{
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0.3px;
+        padding: 27px 85px;
+        margin-bottom: 20px;
+        margin-right: 0;
+        width: 100%;
+    }
+
+
+    .project-description{
+        width: 100%;
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: 0.3px;
+    }
+
+    .about-logo{
+        padding: 50px 20px;
+    }
+
+    .about-project-content{
+        width: 100%;
+    }
+
+    .about-logo-title{
+        font-size: 26px;
+        letter-spacing: 0.5px;
+        margin-bottom: 12px;
+    }
+
+    .about-logo-description{
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: 0;
+        margin-bottom: 30px;
+        max-width: none;
+    }
+
+    .container_flex{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .homepage{
+        padding: 50px 20px 30px;
+    }
+
+    .homepage-title{
+        font-size: 26px;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px;
+        align-self: flex-start;
+    }
+    
+    .iPad{
+        padding: 50px 20px;
+    }
+
+    .design-description{
+        padding: 70px 20px 50px;
+    }
+
+    .buttons-hide , .callback-hide{
+        display: none;
+    }
+
+    .back-to-pf, .visit-site{
+        display: none;
+    }
+
+    .footer-bottom{
+        padding: 20px 0px;
+        background-color: #fff;
+        font-size: 14px;
+        font-family: 'Museo Sans Cyrl300';
+        letter-spacing: 1.05px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-bottom-back-pf, .footer-bottom-visit{
+        padding-bottom: 5px;
+        border-bottom: 2px solid #ba2a5d;
+    }
+
+    .footer-bottom-back-pf{
+        padding-left: 10%;
+    }
+
+    .footer-bottom-visit{
+        padding-right: 15%;
+    }
+}
