@@ -55,7 +55,7 @@ a{
     width: 38px;
 }
 .header-menu{
-    background-image: url(/images/menu.svg);
+    background-image: url(./images/menu.svg);
     background-repeat: no-repeat;
     height: 31px;
     width: 26px;
@@ -414,6 +414,10 @@ a{
     color: fuchsia;
 }
 
+.footer-bottom{
+    display: none;
+}
+
 @media screen and (max-width: 768px){
     .container{
         padding: 0px 0px;
@@ -583,6 +587,7 @@ a{
     .footer-bottom-back-pf, .footer-bottom-visit{
         padding-bottom: 5px;
         border-bottom: 2px solid #ba2a5d;
+        color: #262626;
     }
 
     .footer-bottom-back-pf{
